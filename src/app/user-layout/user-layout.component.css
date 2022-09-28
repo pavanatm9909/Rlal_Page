@@ -1,0 +1,18 @@
+.wrapper{
+    position: relative;
+    top: 0;
+    height: 100vh;
+}
+.navbar-brand{
+    padding-left: 2%;
+}
+.navbar-nav{
+    position: absolute;
+    right: 0;
+    padding: 1%;  
+}
+
+.textalign{
+    text-align: center;
+}
+
