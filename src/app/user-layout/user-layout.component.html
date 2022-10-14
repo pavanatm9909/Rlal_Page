@@ -4,10 +4,16 @@
         <ul class="navbar-nav">
             <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="nav-item">
                 <a class="nav-link" [routerLink]="[menuItem.path]">
-                    <p>{{menuItem.title}}</p>
+                    <p style="margin-top: 13px">{{menuItem.title}}</p>
                 </a>
             </li>
         </ul>
     </div>
 </nav>
+<div class="sidebar" data-color="green" data-image="">
+    <app-side-news style="float:right; padding: 60px 20px;" class="col-sm-3"></app-side-news>
+    
+</div>
 <router-outlet></router-outlet>
+
+

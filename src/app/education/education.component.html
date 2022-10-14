@@ -1,1 +1,10 @@
-<p>education works!</p>
+<h2 style="text-align: center;padding: 1.5%;">Education & Certifications</h2>
+<ul style="padding-left: 7%;">
+    <div *ngFor="let data of Education_data">
+    <li style="padding: 1%;">
+        <h4>{{data.Degree}}</h4>
+        <a href="{{data.UniUrl}}" style="color: red;">{{data.UniName}}</a>
+        <div>{{data.Place}}</div>
+    </li>
+    </div>
+</ul>

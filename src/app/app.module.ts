@@ -13,6 +13,7 @@ import { UserLayoutModule } from './user-layout/user-layout.module';
 import { PublicationsComponent } from './publications/publications.component';
 import { ResearchComponent } from './research/research.component';
 import { SoftwaresComponent } from './softwares/softwares.component';
+import { SideNewsComponent } from './side-news/side-news.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SoftwaresComponent } from './softwares/softwares.component';
     AwardsComponent,
     PublicationsComponent,
     ResearchComponent,
-    SoftwaresComponent
+    SoftwaresComponent,
+    SideNewsComponent
   ],
   imports: [
     BrowserModule,
