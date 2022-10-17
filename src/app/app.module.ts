@@ -14,6 +14,7 @@ import { PublicationsComponent } from './publications/publications.component';
 import { ResearchComponent } from './research/research.component';
 import { SoftwaresComponent } from './softwares/softwares.component';
 import { SideNewsComponent } from './side-news/side-news.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SideNewsComponent } from './side-news/side-news.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserLayoutModule
+    UserLayoutModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
