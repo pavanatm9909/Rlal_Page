@@ -16,6 +16,7 @@ import { SoftwaresComponent } from './softwares/softwares.component';
 import { SideNewsComponent } from './side-news/side-news.component';
 import { FormsModule } from '@angular/forms';
 import { ResearchDetailComponent } from './research/research-detail/research-detail.component';
+import { ResearchMainComponent } from './research/research-main/research-main.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ResearchDetailComponent } from './research/research-detail/research-det
     ResearchComponent,
     SoftwaresComponent,
     SideNewsComponent,
-    ResearchDetailComponent
+    ResearchDetailComponent,
+    ResearchMainComponent
   ],
   imports: [
     BrowserModule,
