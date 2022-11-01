@@ -10,10 +10,9 @@
         </ul>
     </div>
 </nav>
-<div class="sidebar" data-color="green" data-image="">
-    <app-side-news style="float:right; padding: 60px 20px;" class="col-sm-3"></app-side-news>
-    
+<div class="col-md-12">
+    <div class="sidebar">
+        <app-side-news style="float:right; padding: 60px 20px;" class="col-md-3"></app-side-news>
+    </div>
 </div>
-<router-outlet></router-outlet>
-
-
+<router-outlet style="float:left;" class="col-md-9"></router-outlet>

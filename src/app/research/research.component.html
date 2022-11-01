@@ -2,66 +2,74 @@
     <div class="row">
         <h1 style="text-align: center; padding: 5px;">Recearch</h1><hr>
     </div>
-    <div class="row">
-        <div class="container">
-            <div class="row" style="margin-bottom: 20px">
-                <div class="col-md-4">
-                    <div class="card" >
-                        <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Safety Verification</h5>
-                            <a href="#" class="btn btn-primary b-gray">View</a>
+    <div *ngIf="isValid;then content else other_content">here is ignored</div>
+    <ng-template #content>
+        <div class="row">
+            <div class="container">
+                <div class="row" style="margin-bottom: 20px">
+                    <div class="col-md-4">
+                        <div class="card" >
+                            <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">Safety Verification</h5>
+                                <a (click)="ChangeToDetails()" class="btn btn-primary b-gray">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" >
+                            <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">Requirement Validation</h5>
+                                <a href="#" class="btn btn-primary b-gray">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" >
+                            <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">Optimal Path/Motion Planning for Autonomous Systems</h5>
+                                <a href="#" class="btn btn-primary b-gray">View</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card" >
-                        <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Requirement Validation</h5>
-                            <a href="#" class="btn btn-primary b-gray">View</a>
+                <div class="row" style="margin-bottom: 20px">
+                    <div class="col-md-4">
+                        <div class="card" >
+                            <img src="assets/research.jpg" class="card-img-top" alt="..." style="height:27rem;">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">Safety Verification</h5>
+                                <a href="#" class="btn btn-primary b-gray">View</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card" >
-                        <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Optimal Path/Motion Planning for Autonomous Systems</h5>
-                            <a href="#" class="btn btn-primary b-gray">View</a>
+                    <div class="col-md-4">
+                        <div class="card" >
+                            <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">Requirement Validation</h5>
+                                <a href="#" class="btn btn-primary b-gray">View</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row" style="margin-bottom: 20px">
-                <div class="col-md-4">
-                    <div class="card" >
-                        <img src="assets/research.jpg" class="card-img-top" alt="..." style="height:27rem;">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Safety Verification</h5>
-                            <a href="#" class="btn btn-primary b-gray">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card" >
-                        <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Requirement Validation</h5>
-                            <a href="#" class="btn btn-primary b-gray">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card" >
-                        <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Optimal Path/Motion Planning for Autonomous Systems</h5>
-                            <a href="#" class="btn btn-primary b-gray">View</a>
+                    <div class="col-md-4">
+                        <div class="card" >
+                            <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">Optimal Path/Motion Planning for Autonomous Systems</h5>
+                                <a href="#" class="btn btn-primary b-gray">View</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </ng-template>
+    <ng-template #other_content>
+        <a (click)="ChangeToDetails()" class="btn btn-primary b-gray">View</a>
+        <h1>Hello</h1>
+    </ng-template>
+   
 </section>
