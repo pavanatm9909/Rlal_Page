@@ -6,60 +6,13 @@
     <ng-template #content>
         <div class="row">
             <div class="container">
-                <div class="row" style="margin-bottom: 20px">
-                    <div class="col-md-4">
-                        <div class="card" >
+                <div class="row" >
+                    <div class="col-md-4" *ngFor="let data of research_data" style="margin-bottom: 20px">
+                        <div class="card">
                             <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
                             <div class="card-img-overlay">
-                                <h5 class="card-title">Safety Verification</h5>
-                                <a (click)="ChangeToDetails()" class="btn btn-primary b-gray">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" >
-                            <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">Requirement Validation</h5>
-                                <a href="#" class="btn btn-primary b-gray">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" >
-                            <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">Optimal Path/Motion Planning for Autonomous Systems</h5>
-                                <a href="#" class="btn btn-primary b-gray">View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="margin-bottom: 20px">
-                    <div class="col-md-4">
-                        <div class="card" >
-                            <img src="assets/research.jpg" class="card-img-top" alt="..." style="height:27rem;">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">Safety Verification</h5>
-                                <a href="#" class="btn btn-primary b-gray">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" >
-                            <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">Requirement Validation</h5>
-                                <a href="#" class="btn btn-primary b-gray">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" >
-                            <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">Optimal Path/Motion Planning for Autonomous Systems</h5>
-                                <a href="#" class="btn btn-primary b-gray">View</a>
+                                <h5 class="card-title">{{data.name}}</h5>
+                                <a (click)="ChangeToDetails(data.name, data.description)" class="btn btn-primary b-gray">View</a>
                             </div>
                         </div>
                     </div>
@@ -68,8 +21,15 @@
         </div>
     </ng-template>
     <ng-template #other_content>
-        <a (click)="ChangeToDetails()" class="btn btn-primary b-gray">View</a>
-        <h1>Hello</h1>
+        <div class="row">
+            <div class="container">
+                <a (click)="ChangeToDetails('back', 'back')" class="btn btn-primary b-gray" style="margin-bottom: 10px;">Back to Research</a>
+                <div class="card" style="padding: 10px;">
+                    <h3 style="text-align: center">{{research_name}}</h3>
+                    <p>{{research_desc}}</p>
+                </div>
+            </div>
+        </div>
     </ng-template>
    
 </section>
