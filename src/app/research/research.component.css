@@ -64,5 +64,16 @@ p{
     background-color: gray;
     border: gray;
 }
-
-
+.b-overlay{
+    position:absolute;
+    opacity:0.4; 
+    background-color: black; 
+    margin-left:50px; 
+    border: 1px solid white;
+}
+.card-img-overlay {
+    display: flex; 
+    justify-content: center; 
+    align-items:center; 
+    height: 300px
+}

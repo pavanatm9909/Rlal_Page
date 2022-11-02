@@ -11,8 +11,10 @@
                         <div class="card">
                             <img src="assets/research.jpg" class="card-img-top" alt="..." style="height: 27rem;">
                             <div class="card-img-overlay">
-                                <h5 class="card-title">{{data.name}}</h5>
-                                <a (click)="ChangeToDetails(data.name, data.description)" class="btn btn-primary b-gray">View</a>
+                                <div >
+                                    <h5 class="card-title" style="color: white">{{data.name}}</h5>
+                                    <a (click)="ChangeToDetails(data.name, data.description)" class="btn btn-primary b-gray b-overlay">View</a>
+                                </div>
                             </div>
                         </div>
                     </div>
