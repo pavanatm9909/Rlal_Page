@@ -1,10 +1,15 @@
 <h2 style="text-align: center;padding: 1.5%;">Publications</h2>
 <div style="padding-left: 7%;">
-    <div><b style="font-size: 1.0em;">Year: </b>
+    <b style="font-size: 1.0em;">Year: </b>
         <select style="padding-left: 1%;" [(ngModel)]="chosenMod" (ngModelChange)="modo()">
             <option value="{{x}}" *ngFor="let x of years" >{{x}}</option>
         </select>
-    </div>
+    &nbsp;&nbsp;&nbsp;
+    <b style="font-size: 1.0em;">Category: </b>
+    <select style="padding-left: 1%;" [(ngModel)]="chosenCatMod" (ngModelChange)="modo()">
+        <option value="{{x}}" *ngFor="let x of Category" >{{x}}</option>
+    </select>
+    
 </div>
 <br>
 <ol style="padding-left: 7%;">

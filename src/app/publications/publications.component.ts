@@ -10,6 +10,7 @@ import { PUBLICATION } from 'src/interface/publications';
 export class PublicationsComponent implements OnInit {
 
   years = ["All",2021, 2020, 2019, 2018, 2017, 2016, 2015]
+  Category = ["All","Category1","Category2","Category3"]
 
   Publications_data = [{
     Author: "Ratan Lal and Pavithra Prabhakar",
@@ -17,6 +18,7 @@ export class PublicationsComponent implements OnInit {
     PubName: "Time-Optimal Multi-Quadrotor Trajectory Planning for Pesticide Spraying",
     Domain: "International Conference on Robotics and Automation (ICRA)",
     Year: 2021,
+    category:"Category1"
   },
   {
     Author: "Ratan Lal, Weikang Duan, and Pavithra Prabhakar",
@@ -24,6 +26,7 @@ export class PublicationsComponent implements OnInit {
     PubName: "Bayesian Statistical Model Checking for Continuous Stochastic Logic",
     Domain: "ACM-IEEE International Conference on Formal Methods and Models for System Design (MEMOCODE)",
     Year: 2020,
+    category:"Category2"
   },
   {
     Author: "Ratan Lal and Pavithra Prabhakar",
@@ -31,6 +34,7 @@ export class PublicationsComponent implements OnInit {
     PubName: "Safety Analysis of Linear Discrete-time Stochastic Systems",
     Domain: "International Conference on Embedded Software (EMSOFT) (WIP)",
     Year: 2020,
+    category:"Category2"
   },
   {
     Author: "Daksh Shukla, Ratan Lal, Dustin Hauptman, Shawn S. Keshmiri, Pavithra Prabhakar and Nicole Beckage",
@@ -38,6 +42,7 @@ export class PublicationsComponent implements OnInit {
     PubName: "Flight Test Validation of a Safety-Critical Neural Network Based Longitudinal Controller for a Fixed-Wing UAS",
     Domain: "AIAA AVIATION",
     Year: 2020,
+    category:"Category1"
   },
   {
     Author: "Ratan Lal and Pavithra Prabhakar",
@@ -45,6 +50,7 @@ export class PublicationsComponent implements OnInit {
     PubName: "Compositional construction of bounded error over-approximations of acyclic interconnected continuous dynamical systems",
     Domain: "ACM-IEEE International Conference on Formal Methods and Models for System Design (MEMOCODE)",
     Year: 2019,
+    category:"Category2"
   },
   {
     Author: "Ratan Lal and Pavithra Prabhakar",
@@ -52,6 +58,7 @@ export class PublicationsComponent implements OnInit {
     PubName: "Counterexample guided abstraction refinement for polyhedral probabilistic hybrid systems",
     Domain: "ACM Transactions on Embedded Computing Systems (TECS), Accepted at EMSOFT",
     Year: 2019,
+    category:"Category2"
   },
   {
     Author: "Pavithra Prabhakar, Ratan Lal and James Kapinski",
@@ -59,6 +66,7 @@ export class PublicationsComponent implements OnInit {
     PubName: "Automatic Trace Generation for Signal Temporal Logic",
     Domain: "39th IEEE Real-Time Systems Symposium (RTSS)",
     Year: 2018,
+    category:"Category2"
   },
   {
     Author: "Ratan Lal and Pavithra Prabhakar",
@@ -66,6 +74,7 @@ export class PublicationsComponent implements OnInit {
     PubName: "Bounded Verification of Reachability of Probabilistic Hybrid Systems",
     Domain: "International Conference on Quantitative Evaluation of Systems (QEST)",
     Year: 2018,
+    category:"Category1"
   },
   {
     Author: "Ratan Lal and Pavithra Prabhakar",
@@ -73,6 +82,7 @@ export class PublicationsComponent implements OnInit {
     PubName: "Hierarchical Abstractions for Reachability Analysis of Probabilistic Hybrid Systems",
     Domain: "Annual Allerton Conference on Communication, Control, and Computing (Allerton)",
     Year: 2018,
+    category:"Category2"
   },
   {
     Author: "Ratan Lal and Pavithra Prabhakar",
@@ -80,6 +90,7 @@ export class PublicationsComponent implements OnInit {
     PubName: "Safety Analysis using Compositional Bounded Error Approximations of Communicating Hybrid Systems",
     Domain: "IEEE Conference on Decision and Control (CDC)",
     Year: 2017,
+    category:"Category1"
   },
   {
     Author: "Ratan Lal, Ajay Sharda and Pavithra Prabhakar",
@@ -87,6 +98,7 @@ export class PublicationsComponent implements OnInit {
     PubName: "Optimal Multi-robot Path Planning for Pesticide Spraying in Agricultural Fields",
     Domain: "IEEE Conference on Decision and Control (CDC)",
     Year: 2017,
+    category:"Category1"
   },
   {
     Author: "Pavithra Prabhakar, Miriam Garcia Soto and Ratan Lal",
@@ -94,6 +106,7 @@ export class PublicationsComponent implements OnInit {
     PubName: "Verification Techniques for Hybrid Systems",
     Domain: "International Symposium, ISoLA ",
     Year: 2016,
+    category:"Category1"
   },
   {
     Author: "Pierre Ganty, Samir Genaim, Ratan Lal and Pavithra Prabhakar",
@@ -101,6 +114,7 @@ export class PublicationsComponent implements OnInit {
     PubName: "From Non-Zenoness Verification to Termination",
     Domain: "ACM-IEEE International Conference on Formal Methods and Models for System Design (MEMOCODE)",
     Year: 2015,
+    category:"Category2"
   },
   {
     Author: "Ratan Lal and Pavithra Prabhakar",
@@ -108,11 +122,13 @@ export class PublicationsComponent implements OnInit {
     PubName: "Bounded error flowpipe computation of parameterized linear systems",
     Domain: "International Conference on Embedded Software (EMSOFT)",
     Year: 2015,
+    category:"Category1"
   },
 
   ]
 
-  chosenMod: any;
+  chosenMod = this.years[0];
+  chosenCatMod = this.Category[0];
   Pub_data!: PUBLICATION[]
   constructor() { }
 
@@ -121,15 +137,25 @@ export class PublicationsComponent implements OnInit {
   }
 
   modo() {
-    console.log(this.chosenMod)
-    if (this.chosenMod == "All") {
+    if (this.chosenCatMod == "All" && this.chosenMod == "All") {
       this.Pub_data = this.Publications_data
     }
     else {
-      console.log("Hi")
+      if(this.chosenMod == "All"){
+        this.Pub_data = this.Publications_data.filter((e1) => {
+          return e1.category == this.chosenCatMod
+        });
+      }
+      else if(this.chosenCatMod == "All"){
+          this.Pub_data = this.Publications_data.filter((e1) => {
+            return e1.Year == Number(this.chosenMod)
+          });
+      }
+      else{
       this.Pub_data = this.Publications_data.filter((e1) => {
-        return e1.Year == Number(this.chosenMod)
+        return e1.category == this.chosenCatMod && e1.Year == Number(this.chosenMod)
       });
+    }
     }
   }
 

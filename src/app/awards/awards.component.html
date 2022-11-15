@@ -1,1 +1,41 @@
-<p>awards works!</p>
+<section id="about">
+    <div class="row">
+        <h1 style="padding-left: 25px; padding-top: 10px;">Awards</h1>
+        <img src="/assets/Awards.jpg" alt="img">
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <h3 style="padding-left: 60px ; padding-top: 15px;"  (click)= "Dishonour()">Honour & Awards</h3>
+            </div>
+            <div *ngIf="HonourDisplay">
+                <ul style="padding-left: 80px;">
+                    <div *ngFor="let data of Honour_data">
+                        <li style="padding: 0.3%;">
+                            <h5>{{data.awardName}}</h5>
+                            <p>{{data.university}},&nbsp;&nbsp;{{data.Year}}&nbsp;{{data.price}}
+                            </p>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <h3 style="padding-left: 60px ; padding-top:9 15px;" (click)="DisTravel()">Travel Scholarships</h3>
+            </div>
+            <div *ngIf="TravelDisplay">
+                <ul style="padding-left: 80px;">
+                    <div *ngFor="let data of Travel_data">
+                        <li style="padding: 0.3%;">
+                            <h5><b>{{data.AwardDomain}}:&nbsp;</b>{{data.awardName}}</h5>
+                            <p>{{data.place}}&nbsp;{{data.price}}
+                            </p>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -1,4 +1,5 @@
 export interface PUBLICATION{
+    category: any;
     Author: String,
     PubUrl: String,
     PubName: String,
