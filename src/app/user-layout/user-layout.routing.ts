@@ -9,7 +9,6 @@ import { ResearchComponent } from '../research/research.component';
 import { SoftwaresComponent } from '../softwares/softwares.component';
 
 export const UserLayoutRoutes: Routes = [
-    { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'education', component: EducationComponent },
